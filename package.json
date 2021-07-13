@@ -5,6 +5,9 @@
   "repository": "https://github.com/404jv/FIN-API",
   "author": "João Victor <joaovictorramalho7@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
   "devDependencies": {
     "nodemon": "^2.0.12"
   },
