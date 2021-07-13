@@ -3,7 +3,7 @@
 ## ✅ TO-DO
 **Requisitos**
 - [x] Deve Ser possível Criar uma conta
-- [ ] Deve Ser possível buscar o extrato bancário do cliente
+- [x] Deve Ser possível buscar o extrato bancário do cliente
 - [ ] Deve Ser possível ralizar um depósito
 - [ ] Deve Ser possível realizar um saque
 - [ ] Deve Ser possível buscar o extrato bancário do cliente por data
