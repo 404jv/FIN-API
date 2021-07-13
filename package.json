@@ -1,0 +1,11 @@
+{
+  "name": "fin-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/404jv/FIN-API",
+  "author": "João Victor <joaovictorramalho7@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
