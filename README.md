@@ -2,7 +2,7 @@
 
 ## ✅ TO-DO
 **Requisitos**
-- [] Deve Ser possível Criar uma conta
+- [x] Deve Ser possível Criar uma conta
 - [] Deve Ser possível buscar o extrato bancário do cliente
 - [] Deve Ser possível ralizar um depósito
 - [] Deve Ser possível realizar um saque
@@ -12,7 +12,7 @@
 - [] Deve Ser possível deletar uma conta
 
 **Regras de negócio**
-- [] Não deve ser possível cadastrar uma conta com CPF já existente
+- [x] Não deve ser possível cadastrar uma conta com CPF já existente
 - [] Não deve ser possível fazer um depósito em uma conta não existente
 - [] Não deve ser possível buscar extato em uma conta não existente
 - [] Não deve ser possível fazer um saque em uma conta não existente
