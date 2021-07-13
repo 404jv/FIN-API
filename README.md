@@ -68,9 +68,10 @@ As minhas anotações e repostas para as perguntas, estão nesse [arquivo](cader
 ```
 Caso a request estaja com problema, é retornado um status HTTP com um JSON descrevendo o erro, exemplo:
 ```json
-{ // Status retornado é 404 (Resource not found)
+{ 
   "error": "Customer not found"
 }
+// Status retornado é 404 (Resource not found)
 ```
 
 ### ➕ POST | /deposit
@@ -84,9 +85,10 @@ Caso a request estaja com problema, é retornado um status HTTP com um JSON desc
 
 **Response**: Caso a request seja bem sucedida, é retornado um status 201 (Created). Caso contrário é retornado o status HTTP com um JSON descrevendo o erro, exemplo de uma resposta ao um erro:
 ```json
-{ /// Status retornado é 404 (Resource not found)
+{ 
   "error": "Customer not found"
 }
+// Status retornado é 404 (Resource not found)
 ```
 
 ### ➖ POST | /withdraw
@@ -99,9 +101,10 @@ Caso a request estaja com problema, é retornado um status HTTP com um JSON desc
 
 **Response**: Como resposta para uma request bem sucedida é retornado um status 201 (Created), caso contrário a resposta contêm o status HTTP com um JSON descrevendo o error, por exemplo:
 ```json
-{ /// Status retornado é 404 (Resource not found)
+{ 
   "error": "Customer not found"
 }
+// Status retornado é 404 (Resource not found)
 ```
 
 ## 📅 GET | /statement/date
