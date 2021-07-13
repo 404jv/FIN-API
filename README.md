@@ -1,4 +1,8 @@
 # FIN-API
+Fin API é o projeto criado no Chapeter 1, do Bootcamp trilha de Node.js da Rocketseat. 💜
+
+## 📝 Anotações
+As minhas anotações e repostas para as perguntas, estão nesse [arquivo](caderno.md).
 
 ## ✅ TO-DO
 **Requisitos**
