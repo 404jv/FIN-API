@@ -36,9 +36,9 @@ As minhas anotações e repostas para as perguntas, estão nesse [arquivo](cader
 **Response**: Caso a resposta seja bem sucedida, é retornado um 201 (Created). Caso contrário é retornado o status HTTP, junto com um JSON, descrevendo o erro. Um exemplo de erro:
 ```json
 {
-  // Status retornado é 409 (Conflict)
   "error": "Customer Already Exists!"
 }
+// Status retornado é 409 (Conflict)
 ```
 
 ### 📜 GET | /statement
