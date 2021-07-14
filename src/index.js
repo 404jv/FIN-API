@@ -121,7 +121,7 @@ app.get('/statement/date', verifyIfExistsAccountCPF, (request, response) => {
   return response.json(statement);
 });
 
-app.get('/account', verifyIfExistsAccountCPF, (request, response) => {
+app.put('/account', verifyIfExistsAccountCPF, (request, response) => {
   const { name } = request.body;
   const { costumer } = request;
 
