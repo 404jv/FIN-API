@@ -12,16 +12,18 @@ As minhas anotações e repostas para as perguntas, estão nesse [arquivo](cader
 - [x] Deve Ser possível realizar um saque
 - [x] Deve Ser possível buscar o extrato bancário do cliente por data
 - [x] Deve Ser possível atualizar dados da conta do cliente
-- [ ] Deve Ser possível obter dados da conta do cliente
-- [ ] Deve Ser possível deletar uma conta
+- [x] Deve Ser possível obter dados da conta do cliente
+- [x] Deve Ser possível deletar uma conta
+- [x] Deve Ser possível retornar o balance 
 
 **Regras de negócio**
 - [x] Não deve ser possível cadastrar uma conta com CPF já existente
 - [x] Não deve ser possível buscar extato em uma conta não existente
 - [x] Não deve ser possível fazer um depósito em uma conta não existente
 - [x] Não deve ser possível fazer um saque em uma conta não existente
-- [ ] Não deve ser possível excluir uma conta não existente
+- [x] Não deve ser possível excluir uma conta não existente
 - [x] Não deve ser possível fazer saque quando o saldo for insuficiente
+- [x] Não deve ser possível retornar o balance de uma conta não existente
 
 ## 📃 Documentação
 
@@ -181,4 +183,71 @@ http://localhost:3333/statement/date?date=2021-07-13
     }
   ]
 }
+```
+
+## 👋 DELETE | /balance
+**Request**: Rota para deletar uma account, o único requisito é o header contendo o CPF, tipo string.<br />
+
+**Response**: Uma request bem sucedida vai obter um JSON com um array que tem todos as contas que não foram removidos, por exemplo:
+```json
+[
+  {
+    "id": "47e87ad4-311a-49a0-9ab1-b5eed1272ec2",
+    "name": "Victor",
+    "cpf": "1111111111",
+    "statement": [
+      {
+        "amount": 10,
+        "type": "debit",
+        "created_at": "2021-07-14T20:49:50.142Z"
+      }
+    ]
+  },
+  {
+    "id": "21510b1c-9465-43d9-8907-4c73528b8192",
+    "name": "Ruan",
+    "cpf": "2222222222",
+    "statement": [
+      {
+        "description": "God of War",
+        "amount": 70,
+        "type": "credit",
+        "created_at": "2021-07-14T20:24:38.665Z"
+      },
+      {
+        "description": "GTA V",
+        "amount": 62.50,
+        "type": "credit",
+        "created_at": "2021-07-14T20:24:38.665Z"
+      }
+    ]
+  }
+]
+```
+
+Caso a request estaja com problema, é retornado um status HTTP com um JSON descrevendo o erro, exemplo:
+```json
+{ 
+  "error": "Customer not found"
+}
+// Status retornado é 404 (Resource not found)
+```
+
+## 💲 GET | /balance
+**Request**: Rota para mostrar o balance de um cliente, a request tem que ter um header com o CPF, tipo string, obrigatório.
+
+**Response**: Se a request for bem sucedida é retornado um JSON com o balance do cliente, por exemplo:
+
+```json
+{
+  "balance": 375.55
+}
+```
+
+Caso a request estaja com problema, é retornado um status HTTP com um JSON descrevendo o erro, exemplo:
+```json
+{ 
+  "error": "Customer not found"
+}
+// Status retornado é 404 (Resource not found)
 ```
