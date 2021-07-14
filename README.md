@@ -10,8 +10,8 @@ As minhas anotações e repostas para as perguntas, estão nesse [arquivo](cader
 - [x] Deve Ser possível buscar o extrato bancário do cliente
 - [x] Deve Ser possível ralizar um depósito
 - [x] Deve Ser possível realizar um saque
-- [ ] Deve Ser possível buscar o extrato bancário do cliente por data
-- [ ] Deve Ser possível atualizar dados da conta do cliente
+- [x] Deve Ser possível buscar o extrato bancário do cliente por data
+- [x] Deve Ser possível atualizar dados da conta do cliente
 - [ ] Deve Ser possível obter dados da conta do cliente
 - [ ] Deve Ser possível deletar uma conta
 
@@ -134,4 +134,51 @@ http://localhost:3333/statement/date?date=2021-07-13
     "created_at": "2021-07-13T21:39:48.853Z"
   }
 ]
+```
+
+## 🆕 PUT | /account
+**Request**: Rota para atualizar o nome de um cliente, a request é  preciso um body (JSON) com o nome, tipo string, obrigatório e no header o CPF, tipo string, obrigatório. Exemplo:
+```json
+{
+  "name": "João Victor R. Alves"
+}
+```
+
+**Response**: Para uma request bem sucedida é retornado o status 204 (No Content), no entanto caso a request tenha algum erro, será retornado um JSON descrevendo o erro, por exemplo:
+```json
+{ 
+  "error": "Customer not found"
+}
+// Status retornado é 404 (Resource not found)
+```
+
+## 📁 GET | /account
+**Request**: Rota para listar informações de um cliente, o único requisito nessa rota é o CPF, tipo string.<br/>
+
+**Response**: Caso a request seja bem sucedida é retornado um JSON com as informações do usuário e os statment do mesmo, por exemplo:
+```json
+{
+  "id": "21510b1c-9465-43d9-8907-4c73528b8192",
+  "name": "João Victor R. Alves",
+  "cpf": "23132323412312",
+  "statement": [
+    {
+      "description": "The Witcher 3",
+      "amount": 21,
+      "type": "credit",
+      "created_at": "2021-07-14T20:24:38.665Z"
+    },
+    {
+      "description": "The Witcher 2",
+      "amount": 21,
+      "type": "credit",
+      "created_at": "2021-07-14T20:24:39.738Z"
+    },
+    {
+      "amount": 10,
+      "type": "debit",
+      "created_at": "2021-07-13T21:39:48.853Z"
+    }
+  ]
+}
 ```
