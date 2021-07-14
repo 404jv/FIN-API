@@ -123,9 +123,9 @@ app.get('/statement/date', verifyIfExistsAccountCPF, (request, response) => {
 
 app.put('/account', verifyIfExistsAccountCPF, (request, response) => {
   const { name } = request.body;
-  const { costumer } = request;
+  const { customer } = request;
 
-  costumer.name = name;
+  customer.name = name;
 
   return response.sendStatus(204);
 });
