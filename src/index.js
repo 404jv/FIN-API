@@ -39,7 +39,7 @@ function getBalance(statement) {
 app.post('/account', (request, response) => {
   const { cpf, name } = request.body;
 
-  const customerAlreadyExists = customers.some((costumer) => costumer.cpf === cpf);
+  const customerAlreadyExists = customers.some((customer) => customer.cpf === cpf);
 
   if (customerAlreadyExists) {
     return response.status(409).json({
